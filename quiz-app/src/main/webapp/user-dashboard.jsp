@@ -87,7 +87,7 @@
    			 </c:if>
    			 
    			 <c:choose>
-  				<c:when test="${loop.index eq fn:length(question.answers)}">
+  				<c:when test="${loop.index + 1 eq fn:length(quesList)}">
     				<input type="button" name="submit" id="submitQuiz" class="submit btn btn-success" value="Submit" />
   				</c:when>
   				<c:otherwise>
@@ -127,12 +127,15 @@ $(document).ready(function() {
 		
 		var JSONObject = {"userAnswers": userAnswers};
 		JSONObject = JSON.stringify(JSONObject);
-		console.log("JSONObject: " + JSONObject);
 		
 		$.ajax({
 			url : "<c:url value="/all/submitUserQuizJson"></c:url>",
 			type : 'post',
 			data : JSONObject,
+		    headers: 
+		    {
+		        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		    },
 			dataType : 'JSON',
 			contentType : 'application/json',
 			success : function(data) {
