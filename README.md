@@ -1,11 +1,19 @@
-# gsk-quiz-app
+# Registration and Login Example with Spring Security, Spring Boot, Spring Data JPA, HSQL, JSP
 
-# GSK Quiz
+## Guide
+https://hellokoding.com/registration-and-login-example-with-spring-security-spring-boot-spring-data-jpa-hsql-jsp/
 
-GSK Quiz - Create Quiz for Event with following steps
-  - Create datbase with gskquiz
-  - Database with admin role will be created automatically as **admin@gsk.com**
-  - upload csv file with NO HEADER and | as DELIMITER (*, as delimiter opted out as comma was present in some sample question* )
-  - Sample CSV file has been provided : csv format 
-        - question1|answer1|answer2|correctAnswer   (***where correct answer will be answer1 or answer2*)
-    
+## Prerequisites
+- JDK 1.7 or later
+- Maven 3 or later
+
+## Stack
+- Spring Security
+- Spring Boot
+- Spring Data JPA
+- Maven
+- JSP
+- HSQL
+
+## Run
+```mvn clean spring-boot:run```
